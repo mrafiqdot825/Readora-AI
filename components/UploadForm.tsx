@@ -187,120 +187,102 @@ const UploadForm = () => {
     <>
       {isSubmitting && <LoadingOverlay />}
 
-      <div className="w-full max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10 lg:py-12">
+      <div className="w-full max-w-3xl mx-auto px-4 py-6 sm:py-8">
         {/* Progress Step Indicator */}
-        <div className="mb-8 sm:mb-12">
-          <div className="flex items-center gap-3 sm:gap-4 overflow-x-auto pb-2 sm:overflow-visible sm:pb-0">
+        <div className="mb-8">
+          <div className="flex items-center justify-between max-w-md mx-auto">
             {/* Step 1 */}
-            <div className="flex items-center min-w-45 sm:min-w-0 sm:flex-1 shrink-0">
+            <div className="flex items-center gap-2.5">
               <div
                 className={cn(
-                  "flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full font-semibold transition-all duration-300",
+                  "flex items-center justify-center w-8 h-8 rounded-full text-xs font-semibold transition-colors duration-150 border",
                   isStep1Complete
-                    ? "bg-[#7c9a82] text-white"
+                    ? "bg-[#7c9a82] border-[#7c9a82] text-white"
                     : currentStep === 1
-                      ? "bg-[#212a3b] text-white"
-                      : "bg-[#f3e4c7] text-[#3d485e]",
+                      ? "bg-[#212a3b] border-[#212a3b] text-white"
+                      : "bg-[var(--bg-card)] border-[var(--border-subtle)] text-[var(--text-secondary)]",
                 )}
               >
-                {isStep1Complete ? (
-                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
-                ) : (
-                  <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
-                )}
+                {isStep1Complete ? <CheckCircle className="w-4 h-4" /> : "1"}
               </div>
-              <div className="ml-3">
-                <p className="font-semibold text-[#212a3b] text-sm">Upload</p>
-                <p className="text-xs text-[#3d485e] font-light">PDF & Cover</p>
-              </div>
+              <span className="text-xs font-medium text-[var(--text-primary)]">
+                Upload
+              </span>
             </div>
 
             {/* Connector */}
-            <div className="w-6 sm:w-8 h-0.5 bg-[#f3e4c7] shrink-0" />
+            <div className="flex-1 h-px bg-[var(--border-subtle)] mx-3" />
 
             {/* Step 2 */}
-            <div className="flex items-center min-w-45 sm:min-w-0 sm:flex-1 shrink-0">
+            <div className="flex items-center gap-2.5">
               <div
                 className={cn(
-                  "flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full font-semibold transition-all duration-300",
+                  "flex items-center justify-center w-8 h-8 rounded-full text-xs font-semibold transition-colors duration-150 border",
                   isStep2Complete
-                    ? "bg-[#7c9a82] text-white"
+                    ? "bg-[#7c9a82] border-[#7c9a82] text-white"
                     : currentStep === 2
-                      ? "bg-[#212a3b] text-white"
-                      : "bg-[#f3e4c7] text-[#3d485e]",
+                      ? "bg-[#212a3b] border-[#212a3b] text-white"
+                      : "bg-[var(--bg-card)] border-[var(--border-subtle)] text-[var(--text-secondary)]",
                 )}
               >
-                {isStep2Complete ? (
-                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
-                ) : (
-                  <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
-                )}
+                {isStep2Complete ? <CheckCircle className="w-4 h-4" /> : "2"}
               </div>
-              <div className="ml-3">
-                <p className="font-semibold text-[#212a3b] text-sm">Details</p>
-                <p className="text-xs text-[#3d485e] font-light">Book Info</p>
-              </div>
+              <span className="text-xs font-medium text-[var(--text-primary)]">
+                Details
+              </span>
             </div>
 
             {/* Connector */}
-            <div className="w-6 sm:w-8 h-0.5 bg-[#f3e4c7] shrink-0" />
+            <div className="flex-1 h-px bg-[var(--border-subtle)] mx-3" />
 
             {/* Step 3 */}
-            <div className="flex items-center min-w-45 sm:min-w-0 sm:flex-1 shrink-0">
+            <div className="flex items-center gap-2.5">
               <div
                 className={cn(
-                  "flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full font-semibold transition-all duration-300",
+                  "flex items-center justify-center w-8 h-8 rounded-full text-xs font-semibold transition-colors duration-150 border",
                   isStep3Complete
-                    ? "bg-[#7c9a82] text-white"
+                    ? "bg-[#7c9a82] border-[#7c9a82] text-white"
                     : currentStep === 3
-                      ? "bg-[#212a3b] text-white"
-                      : "bg-[#f3e4c7] text-[#3d485e]",
+                      ? "bg-[#212a3b] border-[#212a3b] text-white"
+                      : "bg-[var(--bg-card)] border-[var(--border-subtle)] text-[var(--text-secondary)]",
                 )}
               >
-                {isStep3Complete ? (
-                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
-                ) : (
-                  <Mic className="w-4 h-4 sm:w-5 sm:h-5" />
-                )}
+                {isStep3Complete ? <CheckCircle className="w-4 h-4" /> : "3"}
               </div>
-              <div className="ml-3">
-                <p className="font-semibold text-[#212a3b] text-sm">Voice</p>
-                <p className="text-xs text-[#3d485e] font-light">Choose Tone</p>
-              </div>
+              <span className="text-xs font-medium text-[var(--text-primary)]">
+                Voice
+              </span>
             </div>
           </div>
         </div>
 
         {/* Form Container */}
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-0">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             {/* Step 1: File Upload Section */}
-            <div className="mb-8 sm:mb-10 bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-soft border border-[#f3e4c7]">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-full bg-[#fff6e5] flex items-center justify-center">
-                  <FileText className="w-5 h-5 text-[#663820]" />
-                </div>
-                <h2 className="text-lg sm:text-xl font-serif font-semibold text-[#212a3b]">
-                  Upload Your Book
+            <div className="bg-[var(--bg-card)] rounded-lg p-5 sm:p-6 border border-[var(--border-subtle)]">
+              <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-[var(--border-subtle)]">
+                <FileText className="w-4 h-4 text-[var(--color-brand)]" />
+                <h2 className="text-base font-serif font-semibold text-[var(--text-primary)]">
+                  1. Document Files
                 </h2>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-5">
                 {/* PDF Upload */}
                 <div>
                   <FileUploader
                     control={form.control}
                     name="pdfFile"
-                    label="PDF File *"
+                    label="PDF Document *"
                     acceptTypes={ACCEPTED_PDF_TYPES}
                     icon={Upload}
-                    placeholder="Click to upload PDF"
+                    placeholder="Click or drag PDF here"
                     hint="PDF file (max 50MB) • Required"
                     disabled={isSubmitting}
                   />
-                  <p className="text-xs text-[#3d485e] mt-2 font-light">
-                    Your PDF will be parsed and converted into an interactive
-                    experience
+                  <p className="text-xs text-[var(--text-secondary)] mt-1.5">
+                    Your PDF will be parsed and indexed for voice Q&A.
                   </p>
                 </div>
 
@@ -316,25 +298,23 @@ const UploadForm = () => {
                     hint="PNG, JPG, or WebP (max 5MB) • Optional"
                     disabled={isSubmitting}
                   />
-                  <p className="text-xs text-[#3d485e] mt-2 font-light">
-                    If not provided, we will auto-generate a cover from your PDF
+                  <p className="text-xs text-[var(--text-secondary)] mt-1.5">
+                    If omitted, the first page of the PDF will be used as cover.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Step 2: Details Section */}
-            <div className="mb-8 sm:mb-10 bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-soft border border-[#f3e4c7]">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-full bg-[#fff6e5] flex items-center justify-center">
-                  <BookOpen className="w-5 h-5 text-[#663820]" />
-                </div>
-                <h2 className="text-lg sm:text-xl font-serif font-semibold text-[#212a3b]">
-                  Book Details
+            <div className="bg-[var(--bg-card)] rounded-lg p-5 sm:p-6 border border-[var(--border-subtle)]">
+              <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-[var(--border-subtle)]">
+                <BookOpen className="w-4 h-4 text-[var(--color-brand)]" />
+                <h2 className="text-base font-serif font-semibold text-[var(--text-primary)]">
+                  2. Document Metadata
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Title */}
                 <FormField
                   control={form.control}
@@ -346,7 +326,7 @@ const UploadForm = () => {
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className="form-input rounded-lg bg-[#f8f4e9] border-[#f3e4c7] focus:border-[#212a3b] focus:ring-[#212a3b]/10"
+                          className="rounded-lg bg-[var(--bg-primary)] border-[var(--border-subtle)] focus:border-[var(--color-brand)] text-sm"
                           placeholder="The Forty Rules of Love"
                           {...field}
                           disabled={isSubmitting}
@@ -368,7 +348,7 @@ const UploadForm = () => {
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className="form-input rounded-lg bg-[#f8f4e9] border-[#f3e4c7] focus:border-[#212a3b] focus:ring-[#212a3b]/10"
+                          className="rounded-lg bg-[var(--bg-primary)] border-[var(--border-subtle)] focus:border-[var(--color-brand)] text-sm"
                           placeholder="Elif Shafak"
                           {...field}
                           disabled={isSubmitting}
@@ -379,21 +359,14 @@ const UploadForm = () => {
                   )}
                 />
               </div>
-
-              <p className="text-xs text-[#3d485e] mt-4 font-light">
-                These details will be displayed with your book and help in
-                search indexing
-              </p>
             </div>
 
             {/* Step 3: Voice Selection Section */}
-            <div className="mb-8 sm:mb-10 bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-soft border border-[#f3e4c7]">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-full bg-[#fff6e5] flex items-center justify-center">
-                  <Mic className="w-5 h-5 text-[#663820]" />
-                </div>
-                <h2 className="text-lg sm:text-xl font-serif font-semibold text-[#212a3b]">
-                  Assistant Voice
+            <div className="bg-[var(--bg-card)] rounded-lg p-5 sm:p-6 border border-[var(--border-subtle)]">
+              <div className="flex items-center gap-2.5 mb-5 pb-3 border-b border-[var(--border-subtle)]">
+                <Mic className="w-4 h-4 text-[var(--color-brand)]" />
+                <h2 className="text-base font-serif font-semibold text-[var(--text-primary)]">
+                  3. Assistant Voice Tone
                 </h2>
               </div>
 
@@ -402,8 +375,8 @@ const UploadForm = () => {
                 name="persona"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="form-label mb-4">
-                      Choose a voice <span className="text-red-500">*</span>
+                    <FormLabel className="form-label mb-3">
+                      Select Voice <span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
                       <VoiceSelector
@@ -416,38 +389,34 @@ const UploadForm = () => {
                   </FormItem>
                 )}
               />
-
-              <p className="text-xs text-[#3d485e] mt-4 font-light">
-                The assistant voice will guide readers through the book and
-                provide interactive features
-              </p>
             </div>
 
             {/* Submit Section */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div>
               <Button
                 type="submit"
                 disabled={isSubmitting || !isStep3Complete}
                 className={cn(
-                  "flex-1 form-btn rounded-lg py-3 font-semibold text-base transition-all duration-300",
+                  "w-full h-12 rounded-lg bg-[var(--color-brand)] text-white font-medium text-sm transition-opacity duration-150",
                   !isStep3Complete
                     ? "opacity-50 cursor-not-allowed"
-                    : "hover:shadow-soft-lg hover:scale-105 active:scale-95",
+                    : "hover:opacity-90 active:opacity-100 cursor-pointer",
                 )}
               >
-                {isSubmitting ? "Processing..." : "Begin Synthesis"}
+                {isSubmitting ? "Processing Document..." : "Upload Document"}
               </Button>
             </div>
 
             {/* Info Box */}
-            <div className="mt-6 sm:mt-8 bg-[#fff6e5] rounded-lg p-4 sm:p-5 border border-[#f3e4c7]">
-              <p className="text-xs sm:text-sm text-[#3d485e] font-light leading-relaxed">
-                <span className="font-semibold text-[#212a3b]">
-                  Ready to create?
+            <div className="rounded-lg p-4 border border-[var(--border-subtle)] bg-[var(--bg-tertiary)]">
+              <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                <span className="font-semibold text-[var(--text-primary)]">
+                  Ready to proceed?
                 </span>{" "}
                 All required fields marked with{" "}
-                <span className="text-red-500">*</span> must be filled.
-                Processing typically takes a few minutes depending on file size.
+                <span className="text-red-500">*</span> are mandatory.
+                Processing typically takes less than a minute depending on
+                document size.
               </p>
             </div>
           </form>

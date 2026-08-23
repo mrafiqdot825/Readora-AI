@@ -66,45 +66,56 @@ const VapiControls = ({ book }: { book: IBook }) => {
 
   return (
     <>
-      <div className="max-w-4xl mx-auto flex flex-col gap-8">
+      <div className="max-w-4xl mx-auto flex flex-col gap-6">
         {/* Header Card */}
         <div className="vapi-header-card">
           <div className="vapi-cover-wrapper">
             <Image
               src={book.coverURL || "/images/book-placeholder.png"}
               alt={book.title}
-              width={120}
-              height={180}
-              className="vapi-cover-image !w-[120px] !h-auto"
+              width={100}
+              height={150}
+              className="vapi-cover-image !w-[100px] !h-auto"
               priority
             />
             <div className="vapi-mic-wrapper relative">
-              {isActive && (status === "speaking" || status === "thinking") && (
-                <div className="absolute inset-0 rounded-full bg-white animate-ping opacity-75" />
-              )}
               <button
                 onClick={isActive ? stop : start}
                 disabled={status === "connecting"}
-                className={`vapi-mic-btn shadow-md !w-[60px] !h-[60px] z-10 ${isActive ? "vapi-mic-btn-active" : "vapi-mic-btn-inactive"}`}
+                aria-label={
+                  isActive
+                    ? "Stop voice conversation"
+                    : "Start voice conversation"
+                }
+                className={`vapi-mic-btn !w-11 !h-11 z-10 ${isActive ? "vapi-mic-btn-active" : "vapi-mic-btn-inactive"} ${
+                  isActive &&
+                  (status === "speaking" ||
+                    status === "thinking" ||
+                    status === "listening")
+                    ? "opacity-90 animate-pulse"
+                    : ""
+                }`}
               >
                 {isActive ? (
-                  <Mic className="size-7 text-white" />
+                  <Mic className="size-5 text-white" />
                 ) : (
-                  <MicOff className="size-7 text-[#212a3b]" />
+                  <MicOff className="size-5 text-[var(--text-primary)]" />
                 )}
               </button>
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 flex-1">
+          <div className="flex flex-col gap-3 flex-1">
             <div>
-              <h1 className="text-2xl sm:text-3xl font-bold font-serif text-[#212a3b] mb-1">
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-[var(--text-primary)] mb-1">
                 {book.title}
-              </h1>
-              <p className="text-[#3d485e] font-medium">by {book.author}</p>
+              </h2>
+              <p className="text-sm text-[var(--text-secondary)] font-medium">
+                by {book.author}
+              </p>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2">
               <div className="vapi-status-indicator">
                 <span className={`vapi-status-dot ${statusDisplay.color}`} />
                 <span className="vapi-status-text">{statusDisplay.label}</span>
@@ -117,8 +128,8 @@ const VapiControls = ({ book }: { book: IBook }) => {
               </div>
 
               <div className="vapi-status-indicator">
-                <span className="vapi-status-text">
-                  {formatDuration(duration)}/
+                <span className="vapi-status-text font-mono">
+                  {formatDuration(duration)} /{" "}
                   {formatDuration(maxDurationSeconds)}
                 </span>
               </div>
@@ -127,7 +138,7 @@ const VapiControls = ({ book }: { book: IBook }) => {
         </div>
 
         <div className="vapi-transcript-wrapper">
-          <div className="transcript-container min-h-[400px]">
+          <div className="transcript-container min-h-[380px]">
             <Transcript
               messages={messages}
               currentMessage={currentMessage}

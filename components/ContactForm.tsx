@@ -18,122 +18,141 @@ export default function ContactForm() {
   const [state, handleSubmit, reset] = useForm(formId);
 
   return (
-    <section className="mt-10 max-w-3xl mx-auto">
-      <div className="rounded-2xl border border-border bg-card p-6 md:p-10 shadow-soft-sm">
-        <h2 className="section-title mb-6">Send us a Message</h2>
+    <div className="w-full">
+      {!formId && (
+        <div className="mb-6 p-4 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-subtle)]">
+          <p className="text-xs text-[var(--text-secondary)]">
+            Set <code>NEXT_PUBLIC_FORMSPREE_FORM_ID</code> in{" "}
+            <code>.env.local</code> to activate this contact form.
+          </p>
+        </div>
+      )}
 
-        {!formId && (
-          <div className="mb-6 p-4 rounded-xl bg-amber-50 border border-amber-200">
-            <p className="text-sm font-medium text-amber-800">
-              Set <code>NEXT_PUBLIC_FORMSPREE_FORM_ID</code> in
-              <code> .env.local</code> to activate this contact form. Use only
-              the form ID (for example, <code>xbdzrlke</code>) or the full URL.
+      {state.succeeded ? (
+        <div className="space-y-4">
+          <div className="p-4 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-subtle)]">
+            <p className="text-sm font-medium text-[var(--color-brand)]">
+              Thanks for contacting us. Your message has been sent.
             </p>
           </div>
-        )}
-
-        {state.succeeded ? (
-          <div className="space-y-4">
-            <div className="p-4 rounded-xl bg-green-50 border border-green-200">
-              <p className="text-sm font-medium text-green-800">
-                Thanks for contacting us. Your message has been sent.
-              </p>
-            </div>
-            <Button type="button" onClick={reset} className="form-btn">
-              Send Another Message
-            </Button>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Your name"
-                  required
-                  className="h-12"
-                />
-                <ValidationError
-                  prefix="Name"
-                  field="name"
-                  errors={state.errors}
-                  className="text-sm text-red-700"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  required
-                  className="h-12"
-                />
-                <ValidationError
-                  prefix="Email"
-                  field="email"
-                  errors={state.errors}
-                  className="text-sm text-red-700"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="subject">Subject</Label>
+          <Button
+            type="button"
+            onClick={reset}
+            className="rounded-lg bg-[var(--color-brand)] text-white hover:opacity-90 transition-opacity duration-150"
+          >
+            Send Another Message
+          </Button>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <Label
+                htmlFor="name"
+                className="text-xs font-medium text-[var(--text-primary)]"
+              >
+                Name
+              </Label>
               <Input
-                id="subject"
-                name="subject"
+                id="name"
+                name="name"
                 type="text"
-                placeholder="What's this about?"
+                placeholder="Your name"
                 required
-                className="h-12"
+                className="h-10 rounded-lg bg-[var(--bg-primary)] border-[var(--border-subtle)] text-sm"
               />
               <ValidationError
-                prefix="Subject"
-                field="subject"
+                prefix="Name"
+                field="name"
                 errors={state.errors}
-                className="text-sm text-red-700"
+                className="text-xs text-red-500"
               />
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="message">Message</Label>
-              <textarea
-                id="message"
-                name="message"
-                rows={6}
-                placeholder="Tell us more..."
+            <div className="space-y-1.5">
+              <Label
+                htmlFor="email"
+                className="text-xs font-medium text-[var(--text-primary)]"
+              >
+                Email
+              </Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="your@email.com"
                 required
-                className="w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-3 text-base shadow-xs transition-[color,box-shadow] outline-none resize-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] placeholder:text-muted-foreground disabled:pointer-events-none disabled:opacity-50 md:text-sm"
+                className="h-10 rounded-lg bg-[var(--bg-primary)] border-[var(--border-subtle)] text-sm"
               />
               <ValidationError
-                prefix="Message"
-                field="message"
+                prefix="Email"
+                field="email"
                 errors={state.errors}
-                className="text-sm text-red-700"
+                className="text-xs text-red-500"
               />
             </div>
+          </div>
 
-            <ValidationError
-              errors={state.errors}
-              className="text-sm text-red-700"
-            />
-
-            <Button
-              type="submit"
-              disabled={state.submitting || !formId}
-              className="form-btn"
+          <div className="space-y-1.5">
+            <Label
+              htmlFor="subject"
+              className="text-xs font-medium text-[var(--text-primary)]"
             >
-              {state.submitting ? "Sending..." : "Send Message"}
-            </Button>
-          </form>
-        )}
-      </div>
-    </section>
+              Subject
+            </Label>
+            <Input
+              id="subject"
+              name="subject"
+              type="text"
+              placeholder="What's this about?"
+              required
+              className="h-10 rounded-lg bg-[var(--bg-primary)] border-[var(--border-subtle)] text-sm"
+            />
+            <ValidationError
+              prefix="Subject"
+              field="subject"
+              errors={state.errors}
+              className="text-xs text-red-500"
+            />
+          </div>
+
+          <div className="space-y-1.5">
+            <Label
+              htmlFor="message"
+              className="text-xs font-medium text-[var(--text-primary)]"
+            >
+              Message
+            </Label>
+            <textarea
+              id="message"
+              name="message"
+              rows={5}
+              placeholder="Tell us more..."
+              required
+              className="w-full rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-primary)] px-3 py-2 text-sm text-[var(--text-primary)] transition-colors outline-none resize-none focus-visible:border-[var(--color-brand)] placeholder:text-[var(--text-secondary)] disabled:opacity-50"
+            />
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+              className="text-xs text-red-500"
+            />
+          </div>
+
+          <ValidationError
+            errors={state.errors}
+            className="text-xs text-red-500"
+          />
+
+          <Button
+            type="submit"
+            disabled={state.submitting || !formId}
+            className="rounded-lg bg-[var(--color-brand)] px-5 py-2.5 text-sm font-medium text-white hover:opacity-90 transition-opacity duration-150 cursor-pointer"
+          >
+            {state.submitting ? "Sending..." : "Send Message"}
+          </Button>
+        </form>
+      )}
+    </div>
   );
 }

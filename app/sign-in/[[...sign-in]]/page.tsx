@@ -16,67 +16,67 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="auth-wrapper px-3! sm:px-5!">
-      <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 items-stretch">
-        <section className="hidden lg:flex rounded-3xl border border-white/60 bg-linear-to-br from-[#f3e4c7] via-[#fff6e5] to-[#f8f4e9] p-8 xl:p-10 shadow-soft-lg">
-          <div className="flex flex-col h-full">
+    <main className="min-h-screen flex items-center justify-center bg-[var(--bg-primary)] px-4 py-12">
+      <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+        <section className="hidden lg:flex rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-8 xl:p-10 flex-col justify-between">
+          <div>
             <Link
               href="/"
-              className="inline-flex w-fit items-center gap-2 text-sm font-medium text-[#3d485e] hover:text-[#212a3b] transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-3.5 h-3.5" />
               Back to home
             </Link>
 
             <div className="mt-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#f3e4c7] shadow-soft-sm">
-                <Sparkles className="w-4 h-4 text-[#663820]" />
-                <span className="text-xs font-semibold text-[#663820] tracking-wide uppercase">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[var(--bg-tertiary)] border border-[var(--border-subtle)]">
+                <Sparkles className="w-3.5 h-3.5 text-[var(--color-brand)]" />
+                <span className="text-xs font-semibold text-[var(--color-brand)] tracking-wider uppercase">
                   Welcome back
                 </span>
               </div>
 
-              <h1 className="mt-5 text-4xl font-serif font-bold text-[#212a3b] leading-tight">
+              <h1 className="mt-4 text-3xl font-serif font-bold text-[var(--text-primary)] leading-tight">
                 Continue Your Voice Learning Journey
               </h1>
 
-              <p className="mt-4 text-base text-[#3d485e] leading-relaxed max-w-md">
+              <p className="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed max-w-md">
                 Sign in to open your document library, resume saved sessions,
                 and keep learning through natural conversations.
               </p>
             </div>
+          </div>
 
-            <div className="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8">
-              <div className="rounded-xl bg-white/80 border border-[#f3e4c7] p-4">
-                <BookOpen className="w-5 h-5 text-[#663820]" />
-                <p className="mt-2 text-sm font-semibold text-[#212a3b]">
-                  Access your library
-                </p>
-                <p className="text-sm text-[#3d485e]">
-                  Revisit PDFs and books from any device.
-                </p>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-8 border-t border-[var(--border-subtle)]">
+            <div className="rounded-lg bg-[var(--bg-primary)] border border-[var(--border-subtle)] p-3.5">
+              <BookOpen className="w-4 h-4 text-[var(--color-brand)]" />
+              <p className="mt-1.5 text-xs font-semibold text-[var(--text-primary)]">
+                Access your library
+              </p>
+              <p className="text-xs text-[var(--text-secondary)]">
+                Revisit PDFs and documents from any device.
+              </p>
+            </div>
 
-              <div className="rounded-xl bg-white/80 border border-[#f3e4c7] p-4">
-                <Mic className="w-5 h-5 text-[#663820]" />
-                <p className="mt-2 text-sm font-semibold text-[#212a3b]">
-                  Keep conversations going
-                </p>
-                <p className="text-sm text-[#3d485e]">
-                  Continue voice Q&A exactly where you left off.
-                </p>
-              </div>
+            <div className="rounded-lg bg-[var(--bg-primary)] border border-[var(--border-subtle)] p-3.5">
+              <Mic className="w-4 h-4 text-[var(--color-brand)]" />
+              <p className="mt-1.5 text-xs font-semibold text-[var(--text-primary)]">
+                Keep conversations going
+              </p>
+              <p className="text-xs text-[var(--text-secondary)]">
+                Continue voice Q&A exactly where you left off.
+              </p>
             </div>
           </div>
         </section>
 
-        <section className="auth-shadow w-full max-w-xl mx-auto lg:max-w-none rounded-2xl sm:rounded-3xl border border-white/60 shadow-soft-lg px-3 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 bg-white/80 backdrop-blur-sm overflow-hidden">
-          <div className="mb-5 lg:hidden">
+        <section className="w-full max-w-md mx-auto lg:max-w-none rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6 sm:p-8 flex flex-col justify-center">
+          <div className="mb-4 lg:hidden">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#3d485e] hover:text-[#212a3b] transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-3.5 h-3.5" />
               Back to home
             </Link>
           </div>

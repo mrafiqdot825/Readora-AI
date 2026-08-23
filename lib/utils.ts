@@ -121,7 +121,8 @@ export async function parsePDFFile(file: File) {
       throw new Error("Could not get canvas context");
     }
 
-    await firstPage.render({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    await (firstPage.render as any)({
       canvasContext: context,
       viewport: viewport,
     }).promise;

@@ -36,10 +36,8 @@ const Transcript = ({
   if (isEmpty) {
     return (
       <div className="transcript-empty">
-        <Mic className="size-12 text-[#212a3b] mb-4" />
-        <h2 className="transcript-empty-text">
-          <b>No conversation yet</b>
-        </h2>
+        <Mic className="size-8 text-[var(--color-brand)] mb-3 opacity-60" />
+        <h3 className="transcript-empty-text">No conversation yet</h3>
         <p className="transcript-empty-hint">
           Click the mic button above to start talking
         </p>
@@ -50,7 +48,7 @@ const Transcript = ({
   return (
     <div
       ref={scrollRef}
-      className="transcript-messages overflow-y-auto pr-2 flex-1"
+      className="transcript-messages overflow-y-auto pr-2 flex-1 space-y-3"
     >
       {messages.map((message, index) => (
         <div

@@ -88,219 +88,171 @@ const metrics = [
 
 export default function AboutPage() {
   return (
-    <>
-      <main className="wrapper container">
-        <section className="relative overflow-hidden rounded-4xl border border-(--border-medium) bg-[radial-gradient(circle_at_8%_10%,rgba(102,56,32,0.17),transparent_28%),radial-gradient(circle_at_92%_0%,rgba(33,42,59,0.13),transparent_32%),linear-gradient(to_bottom_right,var(--bg-tertiary),white_40%,var(--bg-primary))] px-6 py-10 shadow-soft-lg sm:px-9 md:px-12 md:py-14">
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(33,42,59,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(33,42,59,0.06)_1px,transparent_1px)] bg-size-[42px_42px] opacity-30" />
+    <main className="wrapper container pt-24 pb-16">
+      <section className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6 sm:p-10 mb-10">
+        <div className="grid gap-8 lg:grid-cols-2 items-center">
+          <div>
+            <span className="inline-flex rounded-md border border-[var(--border-subtle)] bg-[var(--bg-tertiary)] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--color-brand)] mb-4">
+              About Readora
+            </span>
 
-          <div className="relative z-10 grid gap-10 lg:grid-cols-2 lg:gap-12">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-(--border-medium) bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-(--color-brand)">
-                About Readora
-              </div>
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-[var(--text-primary)]">
+              Talk. Learn. Understand.
+            </h1>
 
-              <h1 className="mt-6 max-w-xl text-4xl font-bold leading-tight text-(--text-primary) sm:text-5xl md:text-6xl">
-                Talk. Learn. Understand.
-              </h1>
-
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-(--text-secondary) sm:text-lg md:text-xl">
-                Readora transforms static documents into interactive voice
-                conversations, helping you learn faster, understand deeper, and
-                engage with ideas in the most natural way possible.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <span className="rounded-full border border-(--border-medium) bg-white/70 px-4 py-2 text-sm font-semibold text-(--text-primary)">
-                  AI-Powered
-                </span>
-                <span className="rounded-full border border-(--border-medium) bg-white/70 px-4 py-2 text-sm font-semibold text-(--text-primary)">
-                  Voice-First
-                </span>
-                <span className="rounded-full border border-(--border-medium) bg-white/70 px-4 py-2 text-sm font-semibold text-(--text-primary)">
-                  Intelligent Search
-                </span>
-              </div>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 lg:content-start">
-              {metrics.map((metric) => (
-                <article
-                  key={metric.label}
-                  className="rounded-2xl border border-(--border-subtle) bg-white/75 p-5 backdrop-blur-sm"
-                >
-                  <p className="text-3xl font-bold text-(--text-primary)">
-                    {metric.value}
-                  </p>
-                  <p className="mt-1 text-sm font-medium text-(--text-secondary)">
-                    {metric.label}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="mt-14 md:mt-18">
-          <div className="mb-8 flex items-end justify-between gap-6">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-(--color-brand)">
-                Core Advantages
-              </p>
-              <h2 className="mt-2 text-3xl font-bold text-(--text-primary) md:text-4xl">
-                Why teams choose Readora
-              </h2>
-            </div>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {highlights.map((item) => (
-              <article
-                key={item.title}
-                className="group relative overflow-hidden rounded-3xl border border-(--border-subtle) bg-white/80 p-7 shadow-soft-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-soft-md"
-              >
-                <div className="absolute -right-4 -top-4 h-20 w-20 rounded-full bg-(--bg-secondary)/65 blur-2xl transition-transform duration-300 group-hover:scale-125" />
-                <div className="relative z-10">
-                  <span className="inline-flex rounded-full border border-(--border-medium) bg-(--bg-tertiary) px-3 py-1 text-xs font-bold tracking-[0.12em] text-(--color-brand)">
-                    {item.icon}
-                  </span>
-                  <h3 className="mt-4 text-2xl font-bold text-(--text-primary)">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 leading-relaxed text-(--text-secondary)">
-                    {item.description}
-                  </p>
-                  <div className="mt-5 inline-flex rounded-full bg-(--color-brand) px-3 py-1 text-xs font-semibold text-white">
-                    {item.stats}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-16 rounded-4xl border border-(--border-medium) bg-linear-to-br from-white via-(--bg-tertiary)/60 to-(--bg-primary) p-8 md:mt-20 md:p-12">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-(--color-brand)">
-              Simple Workflow
+            <p className="mt-4 text-sm sm:text-base leading-relaxed text-[var(--text-secondary)]">
+              Readora transforms static documents into interactive voice
+              conversations, helping you learn faster, understand deeper, and
+              engage with ideas in the most natural way possible.
             </p>
-            <h2 className="mt-3 text-3xl font-bold text-(--text-primary) md:text-4xl">
-              From upload to insight in minutes
-            </h2>
-            <p className="mt-4 text-(--text-secondary)">
-              Get started quickly with a streamlined process designed for focus,
-              speed, and real understanding.
-            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              <span className="rounded-md border border-[var(--border-subtle)] bg-[var(--bg-primary)] px-3 py-1 text-xs font-medium text-[var(--text-primary)]">
+                AI-Powered
+              </span>
+              <span className="rounded-md border border-[var(--border-subtle)] bg-[var(--bg-primary)] px-3 py-1 text-xs font-medium text-[var(--text-primary)]">
+                Voice-First
+              </span>
+              <span className="rounded-md border border-[var(--border-subtle)] bg-[var(--bg-primary)] px-3 py-1 text-xs font-medium text-[var(--text-primary)]">
+                Grounded Citations
+              </span>
+            </div>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {features.map((feature, index) => (
+          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+            {metrics.map((metric) => (
               <article
-                key={feature.step}
-                className="relative rounded-2xl border border-(--border-subtle) bg-white/85 p-6"
+                key={metric.label}
+                className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-4"
               >
-                {index < features.length - 1 && (
-                  <div className="absolute right-0 top-10 hidden h-px w-8 translate-x-full bg-(--color-brand)/35 lg:block" />
-                )}
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-(--color-brand) text-lg font-bold text-white">
-                  {feature.step}
-                </span>
-                <h3 className="mt-4 text-xl font-bold text-(--text-primary)">
-                  {feature.title}
-                </h3>
-                <p className="mt-2 leading-relaxed text-(--text-secondary)">
-                  {feature.description}
+                <p className="font-serif text-2xl sm:text-3xl font-bold text-[var(--color-brand)]">
+                  {metric.value}
+                </p>
+                <p className="mt-0.5 text-xs text-[var(--text-secondary)]">
+                  {metric.label}
                 </p>
               </article>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="mt-16 grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-stretch md:mt-20">
-          <article className="rounded-4xl border border-(--border-medium) bg-white/80 p-8 shadow-soft-sm md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-(--color-brand)">
-              Built for modern learners
-            </p>
-            <h2 className="mt-3 text-3xl font-bold text-(--text-primary) md:text-4xl">
-              Everything you need in one focused workspace
-            </h2>
+      {/* Core Advantages */}
+      <section className="mb-10">
+        <div className="mb-6">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[var(--color-brand)]">
+            Core Advantages
+          </p>
+          <h2 className="text-2xl font-serif font-bold text-[var(--text-primary)] mt-1">
+            Why readers choose Readora
+          </h2>
+        </div>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {benefits.map((benefit) => (
-                <div
-                  key={benefit}
-                  className="flex items-center gap-3 rounded-xl border border-(--border-subtle) bg-(--bg-tertiary)/55 px-4 py-3"
-                >
-                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-(--color-brand) text-sm font-bold text-white">
-                    ✓
-                  </span>
-                  <span className="text-sm font-semibold text-(--text-primary)">
-                    {benefit}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </article>
+        <div className="grid gap-4 md:grid-cols-3">
+          {highlights.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-5 flex flex-col justify-between"
+            >
+              <div>
+                <span className="inline-flex rounded-md border border-[var(--border-subtle)] bg-[var(--bg-tertiary)] px-2.5 py-0.5 text-xs font-mono font-bold text-[var(--color-brand)] mb-3">
+                  {item.icon}
+                </span>
+                <h3 className="font-serif text-lg font-semibold text-[var(--text-primary)]">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-[var(--text-secondary)]">
+                  {item.description}
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-[var(--border-subtle)] text-xs font-medium text-[var(--color-brand)]">
+                {item.stats}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
-          <article className="rounded-4xl border border-(--border-medium) bg-linear-to-b from-(--bg-primary) to-(--bg-secondary) p-8 md:p-10">
-            <h2 className="text-3xl font-bold text-(--text-primary)">
+      {/* Simple Workflow */}
+      <section className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6 sm:p-8 mb-10">
+        <div className="max-w-xl mb-6">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[var(--color-brand)]">
+            Simple Workflow
+          </p>
+          <h2 className="text-2xl font-serif font-bold text-[var(--text-primary)] mt-1">
+            From upload to insight in minutes
+          </h2>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {features.map((feature) => (
+            <article
+              key={feature.step}
+              className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-4"
+            >
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-[var(--color-brand)] text-xs font-bold text-white mb-3">
+                {feature.step}
+              </span>
+              <h3 className="text-sm font-semibold text-[var(--text-primary)]">
+                {feature.title}
+              </h3>
+              <p className="mt-1.5 text-xs leading-relaxed text-[var(--text-secondary)]">
+                {feature.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Mission & Benefits */}
+      <section className="grid gap-6 md:grid-cols-2 mb-10">
+        <article className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6 sm:p-8">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[var(--color-brand)]">
+            Built For Focus
+          </p>
+          <h2 className="text-xl font-serif font-bold text-[var(--text-primary)] mt-1 mb-4">
+            Everything you need in one workspace
+          </h2>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {benefits.map((benefit) => (
+              <div
+                key={benefit}
+                className="flex items-center gap-2 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-primary)] px-3 py-2 text-xs text-[var(--text-primary)]"
+              >
+                <span className="text-[#7c9a82] font-bold">✓</span>
+                <span>{benefit}</span>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <h2 className="text-xl font-serif font-bold text-[var(--text-primary)] mb-3">
               Our Mission
             </h2>
-            <p className="mt-5 leading-relaxed text-(--text-secondary)">
-              We&apos;re on a mission to revolutionize how people interact with
+            <p className="text-xs leading-relaxed text-[var(--text-secondary)] mb-3">
+              We&apos;re on a mission to transform how people interact with
               documents. By combining advanced voice AI with intelligent content
               understanding, Readora empowers students, professionals,
               researchers, and curious minds to move beyond passive reading.
             </p>
-            <p className="mt-4 leading-relaxed text-(--text-secondary)">
-              Learning should be{" "}
-              <strong className="text-(--text-primary)">conversational</strong>,
-              discovery should be{" "}
-              <strong className="text-(--text-primary)">effortless</strong>, and
-              knowledge should be{" "}
-              <strong className="text-(--text-primary)">accessible</strong> to
-              everyone.
+            <p className="text-xs leading-relaxed text-[var(--text-secondary)]">
+              Learning should be conversational, discovery should be effortless,
+              and knowledge should be accessible to everyone.
             </p>
-
-            <div className="mt-8 rounded-2xl border border-(--border-subtle) bg-white/70 p-5">
-              <p className="text-sm font-medium text-(--text-secondary)">
-                Join thousands of users transforming their learning experience.
-              </p>
-            </div>
-          </article>
-        </section>
-
-        <section className="mt-16 mb-10 md:mt-20">
-          <div className="relative overflow-hidden rounded-4xl border border-(--border-medium) bg-[linear-gradient(120deg,var(--color-brand)_-10%,#8c5a3f_45%,#b57e61_100%)] px-8 py-10 text-center text-white md:px-12 md:py-14">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.22),transparent_32%),radial-gradient(circle_at_88%_80%,rgba(255,255,255,0.18),transparent_28%)]" />
-            <div className="relative z-10">
-              <h2 className="mx-auto max-w-3xl text-3xl font-bold leading-tight md:text-4xl">
-                Any document. Any question. Start your journey with Readora
-                today.
-              </h2>
-              <p className="mx-auto mt-5 max-w-2xl text-base text-white/90 md:text-lg">
-                Experience the future of learning with AI-powered voice
-                conversations that make understanding faster, easier, and more
-                engaging.
-              </p>
-
-              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Link
-                  href="/books/new"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-base font-semibold text-(--color-brand) transition-colors hover:bg-(--bg-tertiary)"
-                >
-                  Upload Your First Document
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-white/70 bg-transparent px-7 py-3 text-base font-semibold text-white transition-colors hover:bg-white/10"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </div>
           </div>
-        </section>
-      </main>
-    </>
+
+          <div className="mt-6 pt-4 border-t border-[var(--border-subtle)]">
+            <Link
+              href="/books/new"
+              className="inline-flex rounded-lg bg-[var(--color-brand)] px-4 py-2 text-xs font-medium text-white hover:opacity-90 transition-opacity duration-150"
+            >
+              Get Started Now &rarr;
+            </Link>
+          </div>
+        </article>
+      </section>
+    </main>
   );
 }

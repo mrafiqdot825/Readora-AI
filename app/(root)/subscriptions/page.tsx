@@ -51,26 +51,22 @@ export default function SubscriptionsPage() {
   ];
 
   return (
-    <main className="container wrapper relative overflow-hidden py-10">
-      <div className="pointer-events-none absolute -top-30 -left-14 h-72 w-72 rounded-full bg-[#f3e4c7]/70 blur-3xl" />
-      <div className="pointer-events-none absolute top-40 -right-16 h-80 w-80 rounded-full bg-[#fff6e5] blur-3xl" />
-
-      <section className="relative mb-12 rounded-3xl border border-(--border-medium) bg-linear-to-br from-[#fff8ec] via-[#f8f4e9] to-[#f3e4c7]/70 px-6 py-10 shadow-soft-lg sm:px-10">
-        <div className="mb-6 flex justify-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#d8c3a5] bg-white/85 px-4 py-2 text-xs font-semibold tracking-[0.13em] text-[#663820] uppercase">
-            <Sparkles className="h-4 w-4" />
-            Pricing that grows with your learning
+    <main className="container wrapper relative py-10">
+      <section className="mb-10 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] px-6 py-8 sm:px-10">
+        <div className="mb-4 flex justify-center">
+          <span className="inline-flex items-center gap-1.5 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-tertiary)] px-3 py-1 text-xs font-semibold tracking-wider text-[var(--color-brand)] uppercase">
+            <Sparkles className="h-3.5 w-3.5" />
+            Pricing Plans
           </span>
         </div>
 
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="font-serif text-4xl font-bold tracking-tight text-(--text-primary) sm:text-5xl">
+          <h1 className="font-serif text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
             Choose Your Plan, Study Smarter
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-(--text-secondary) sm:text-lg">
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
             Start free and upgrade when you are ready for deeper document
-            analysis, longer voice sessions, and a faster path from reading to
-            understanding.
+            analysis, longer voice sessions, and faster learning loops.
           </p>
         </div>
 
@@ -81,13 +77,13 @@ export default function SubscriptionsPage() {
             return (
               <article
                 key={item.title}
-                className="rounded-2xl border border-[#ecd9bc] bg-white/85 p-5 shadow-soft-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft"
+                className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-4"
               >
-                <Icon className="mb-3 h-5 w-5 text-[#663820]" />
-                <h2 className="text-lg font-semibold text-(--text-primary)">
+                <Icon className="mb-2 h-4 w-4 text-[var(--color-brand)]" />
+                <h2 className="text-sm font-semibold text-[var(--text-primary)]">
                   {item.title}
                 </h2>
-                <p className="mt-2 text-sm leading-relaxed text-(--text-secondary)">
+                <p className="mt-1 text-xs leading-relaxed text-[var(--text-secondary)]">
                   {item.description}
                 </p>
               </article>
@@ -96,35 +92,36 @@ export default function SubscriptionsPage() {
         </div>
       </section>
 
-      <section className="relative rounded-3xl border border-(--border-medium) bg-white/80 p-4 shadow-soft-lg backdrop-blur-sm sm:p-8">
-        <div className="mb-6 flex flex-col gap-3 rounded-2xl border border-[#f0debf] bg-linear-to-r from-[#fff6e5] to-[#f8f4e9] p-5 sm:flex-row sm:items-center sm:justify-between">
+      <section className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-5 sm:p-8">
+        <div className="mb-6 flex flex-col gap-3 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#663820]">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--color-brand)]">
               Included in every plan
             </p>
-            <p className="mt-1 text-sm text-(--text-secondary)">
-              Flexible billing, secure account management, and seamless access.
+            <p className="mt-0.5 text-xs text-[var(--text-secondary)]">
+              Flexible billing, secure document management, and cross-device
+              access.
             </p>
           </div>
-          <ul className="grid gap-2 text-sm text-(--text-primary) sm:text-right">
+          <ul className="grid gap-1.5 text-xs text-[var(--text-primary)] sm:text-right">
             {included.map((item) => (
               <li
                 key={item}
-                className="inline-flex items-center gap-2 sm:justify-end"
+                className="inline-flex items-center gap-1.5 sm:justify-end"
               >
-                <CheckCircle2 className="h-4 w-4 text-[#7c9a82]" />
+                <CheckCircle2 className="h-3.5 w-3.5 text-[#7c9a82]" />
                 {item}
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="rounded-2xl border border-[#efdfc4] bg-[#fffdf9] p-3 sm:p-5">
+        <div className="rounded-lg border border-[var(--border-subtle)] bg-white p-3 sm:p-5">
           <PricingTable />
         </div>
       </section>
 
-      <section className="mt-10 grid gap-4 md:grid-cols-3">
+      <section className="mt-8 grid gap-4 md:grid-cols-3">
         {[
           {
             title: "No Hidden Fees",
@@ -143,19 +140,19 @@ export default function SubscriptionsPage() {
         ].map((note) => (
           <article
             key={note.title}
-            className="rounded-2xl border border-(--border-subtle) bg-white/75 p-5 shadow-soft-sm"
+            className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-4"
           >
-            <h3 className="text-base font-semibold text-(--text-primary)">
+            <h3 className="text-sm font-semibold text-[var(--text-primary)]">
               {note.title}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-(--text-secondary)">
+            <p className="mt-1 text-xs leading-relaxed text-[var(--text-secondary)]">
               {note.description}
             </p>
           </article>
         ))}
       </section>
 
-      <p className="mt-7 text-center text-xs text-(--text-secondary)">
+      <p className="mt-6 text-center text-xs text-[var(--text-secondary)]">
         Need help deciding? Reach us via the contact page and we will suggest
         the right plan for your usage.
       </p>

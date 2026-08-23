@@ -42,11 +42,12 @@ const Page = async () => {
   }
 
   return (
-    <main className="new-book pt-[calc(var(--navbar-height)+4rem)]! sm:pt-[calc(var(--navbar-height)+5rem)]!">
-      <section className="flex flex-col gap-5 text-center">
-        <h1 className="page-title-xl">Add a New Book</h1>
-        <p className="subtitle">
-          Upload a PDF to generate your interactive reading experience
+    <main className="new-book pt-20 sm:pt-24">
+      <section className="flex flex-col gap-2 text-center max-w-2xl mx-auto">
+        <h1 className="page-title-xl">Add a New Document</h1>
+        <p className="subtitle text-sm sm:text-base">
+          Upload a PDF to generate your interactive reading and voice
+          conversation experience.
         </p>
       </section>
       <UploadForm />
