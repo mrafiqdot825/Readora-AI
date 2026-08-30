@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us - Get in Touch with Readora",
@@ -22,99 +24,131 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="wrapper container pt-24 pb-16">
-      <section className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6 sm:p-10 mb-8">
-        <div className="grid gap-8 lg:grid-cols-[1.25fr_1fr] lg:items-center">
-          <div>
-            <span className="inline-flex rounded-md border border-[var(--border-subtle)] bg-[var(--bg-tertiary)] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--color-brand)] mb-4">
-              Get in Touch
-            </span>
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-[var(--text-primary)]">
-              Let&apos;s Start a Conversation
-            </h1>
-            <p className="mt-4 text-sm sm:text-base leading-relaxed text-[var(--text-secondary)]">
-              Have questions about Readora? Need help with your account? Or just
-              want to share feedback? Drop us a message and we&apos;ll respond
-              as soon as possible.
-            </p>
+    <main className="wrapper container py-12 sm:py-16">
+      {/* Outer Card Container */}
+      <div className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-card)] p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto shadow-xs">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch">
+          {/* Left Dark Sidebar Panel */}
+          <div className="lg:col-span-5 rounded-3xl bg-[#0f172a] text-white p-7 sm:p-9 flex flex-col justify-between">
+            <div>
+              <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-[11px] font-bold tracking-wider uppercase text-white/90">
+                GET IN TOUCH
+              </span>
+
+              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-6 leading-tight">
+                GET IN
+                <br />
+                TOUCH.
+              </h1>
+
+              <p className="mt-3 text-xs sm:text-sm text-white/70 leading-relaxed font-normal">
+                We&apos;re here to help you build something amazing. Fill out
+                the form and our team will get back to you within 24 hours.
+              </p>
+
+              <div className="border-t border-white/15 my-6 sm:my-8" />
+
+              {/* Contact Information List */}
+              <div className="space-y-5">
+                {/* Email Us */}
+                <div className="flex items-center gap-3.5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white">
+                    <Mail className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold tracking-wider text-white/60 uppercase">
+                      EMAIL US
+                    </p>
+                    <p className="text-xs sm:text-sm font-mono text-white font-medium break-all">
+                      mrafiqdot825@gmail.com
+                    </p>
+                  </div>
+                </div>
+
+                {/* Call Us */}
+                <div className="flex items-center gap-3.5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white">
+                    <Phone className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold tracking-wider text-white/60 uppercase">
+                      CALL US
+                    </p>
+                    <p className="text-xs sm:text-sm font-mono text-white font-medium">
+                      +923129185825
+                    </p>
+                  </div>
+                </div>
+
+                {/* Visit Us */}
+                <div className="flex items-center gap-3.5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white">
+                    <MapPin className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold tracking-wider text-white/60 uppercase">
+                      VISIT US
+                    </p>
+                    <p className="text-xs sm:text-sm text-white font-medium">
+                      Peshawar, Pakistan
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Social Icons */}
+            <div className="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-white/15">
+              <div className="flex items-center gap-2.5">
+                {/* Twitter / X */}
+                <Link
+                  href="https://twitter.com/mrafiqdot825"
+                  target="_blank"
+                  aria-label="Twitter"
+                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white/80 hover:text-white hover:bg-white/20 transition-colors"
+                >
+                  <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </Link>
+
+                {/* GitHub */}
+                <Link
+                  href="https://github.com/mrafiqdot825"
+                  target="_blank"
+                  aria-label="GitHub"
+                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white/80 hover:text-white hover:bg-white/20 transition-colors"
+                >
+                  <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    />
+                  </svg>
+                </Link>
+
+                {/* LinkedIn */}
+                <Link
+                  href="https://www.linkedin.com/in/mrafiqdot825/"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white/80 hover:text-white hover:bg-white/20 transition-colors"
+                >
+                  <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-            <article className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-4">
-              <p className="font-serif text-2xl sm:text-3xl font-bold text-[var(--color-brand)]">
-                24h
-              </p>
-              <p className="mt-0.5 text-xs text-[var(--text-secondary)]">
-                Response Promise
-              </p>
-            </article>
-            <article className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-4">
-              <p className="font-serif text-2xl sm:text-3xl font-bold text-[var(--color-brand)]">
-                7d
-              </p>
-              <p className="mt-0.5 text-xs text-[var(--text-secondary)]">
-                Weekly Support
-              </p>
-            </article>
-            <article className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-4">
-              <p className="font-serif text-2xl sm:text-3xl font-bold text-[var(--color-brand)]">
-                1:1
-              </p>
-              <p className="mt-0.5 text-xs text-[var(--text-secondary)]">
-                Human Assistance
-              </p>
-            </article>
+          {/* Right Form Panel */}
+          <div className="lg:col-span-7 p-2 sm:p-4 lg:p-6 flex flex-col justify-center">
+            <ContactForm />
           </div>
         </div>
-      </section>
-
-      <section className="grid grid-cols-1 gap-4 md:grid-cols-3 mb-8">
-        <article className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-5">
-          <h2 className="text-base font-semibold text-[var(--text-primary)] font-serif mb-2">
-            Email Support
-          </h2>
-          <p className="text-sm text-[var(--color-brand)] font-medium">
-            rafkhan9323@gmail.com
-          </p>
-          <p className="mt-1 text-xs text-[var(--text-secondary)]">
-            Best for account questions and product feedback.
-          </p>
-        </article>
-
-        <article className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-5">
-          <h2 className="text-base font-semibold text-[var(--text-primary)] font-serif mb-2">
-            Location
-          </h2>
-          <p className="text-sm text-[var(--text-primary)]">
-            KPITB Tower, 2nd Floor, Chamkani Peshawer, Pakistan
-          </p>
-          <p className="mt-1 text-xs text-[var(--text-secondary)]">
-            For partnerships and in-person collaboration requests.
-          </p>
-        </article>
-
-        <article className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-5">
-          <h2 className="text-base font-semibold text-[var(--text-primary)] font-serif mb-2">
-            Response Time
-          </h2>
-          <p className="text-sm text-[var(--text-primary)]">Within 24 hours</p>
-          <p className="mt-1 text-xs text-[var(--text-secondary)]">
-            Most replies arrive the same business day.
-          </p>
-        </article>
-      </section>
-
-      <section className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6 sm:p-8">
-        <div className="mb-4">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-brand)]">
-            Message Us
-          </span>
-          <h2 className="mt-1 text-xl sm:text-2xl font-bold font-serif text-[var(--text-primary)]">
-            Tell us what you need
-          </h2>
-        </div>
-        <ContactForm />
-      </section>
+      </div>
     </main>
   );
 }
