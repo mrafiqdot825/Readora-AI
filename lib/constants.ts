@@ -20,15 +20,15 @@ export const ASSISTANT_ID = process.env.NEXT_PUBLIC_ASSISTANT_ID!;
 // Voices selected for natural, engaging book conversations
 export const voiceOptions = {
   // Male voices
-  dave: {
-    id: "CYw3kZ02Hs0563khs1Fj",
-    name: "Dave",
-    description: "Young male, British-Essex, casual & conversational",
-  },
-  daniel: {
+  ahmed: {
     id: "onwK4e9ZLuTAKqWW03F9",
-    name: "Daniel",
-    description: "Middle-aged male, British, authoritative but warm",
+    name: "Ahmed Ali Khan",
+    description: "Male, gentle, reflective & warm",
+  },
+  umar: {
+    id: "CYw3kZ02Hs0563khs1Fj",
+    name: "Umar Khan",
+    description: "Male, concise, clear & academic",
   },
   chris: {
     id: "iP95p4xoKVk53GoZ742B",
@@ -36,26 +36,37 @@ export const voiceOptions = {
     description: "Male, casual & easy-going",
   },
   // Female voices
-  rachel: {
-    id: "21m00Tcm4TlvDq8ikWAM",
-    name: "Rachel",
-    description: "Young female, American, calm & clear",
-  },
   sarah: {
+    id: "21m00Tcm4TlvDq8ikWAM",
+    name: "Sarah Ali Shah",
+    description: "Female, analytical, engaging & approachable",
+  },
+  rachel: {
     id: "EXAVITQu4vr4xnSDxMaL",
-    name: "Sarah",
-    description: "Young female, American, soft & approachable",
+    name: "Rachel",
+    description: "Female, calm & clear",
+  },
+  // Backward-compatibility aliases
+  daniel: {
+    id: "onwK4e9ZLuTAKqWW03F9",
+    name: "Ahmed Ali Khan",
+    description: "Male, gentle, reflective & warm",
+  },
+  dave: {
+    id: "CYw3kZ02Hs0563khs1Fj",
+    name: "Umar Khan",
+    description: "Male, concise, clear & academic",
   },
 };
 
 // Voice categories for the selector UI
 export const voiceCategories = {
-  male: ["dave", "daniel", "chris"],
-  female: ["rachel", "sarah"],
+  male: ["ahmed", "umar", "chris"],
+  female: ["sarah", "rachel"],
 };
 
 // Default voice
-export const DEFAULT_VOICE = "rachel";
+export const DEFAULT_VOICE = "ahmed";
 
 // ElevenLabs voice settings optimized for conversational AI
 export const VOICE_SETTINGS = {

@@ -9,6 +9,7 @@ import { toast } from "sonner";
 
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { getVoice } from "@/lib/utils";
 
 const VapiControls = ({ book }: { book: IBook }) => {
   const {
@@ -123,7 +124,10 @@ const VapiControls = ({ book }: { book: IBook }) => {
 
               <div className="vapi-status-indicator">
                 <span className="vapi-status-text">
-                  Voice: {book.persona || "Daniel"}
+                  Voice:{" "}
+                  {getVoice(book.persona)?.name ||
+                    book.persona ||
+                    "Ahmed Ali Khan"}
                 </span>
               </div>
 

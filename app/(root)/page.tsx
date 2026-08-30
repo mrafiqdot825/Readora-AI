@@ -19,9 +19,11 @@ const Page = async ({
 
   return (
     <>
-      <main className="wrapper container">
+      <main className="w-full">
         <HeroSection />
-        <DocumentsSection query={query} />
+        <div id="library" className="wrapper container scroll-mt-20">
+          <DocumentsSection query={query} />
+        </div>
       </main>
       <Footer />
     </>

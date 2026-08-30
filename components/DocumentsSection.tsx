@@ -23,7 +23,7 @@ const DocumentsSection = async ({ query }: DocumentsSectionProps) => {
     : [];
 
   return (
-    <section className="mb-12">
+    <section id="library" className="mb-12 scroll-mt-24">
       <div className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6 sm:p-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
           <div className="max-w-2xl">
