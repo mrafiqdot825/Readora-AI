@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import React from "react";
 import HeroSection from "@/components/HeroSection";
 import DocumentsSection from "@/components/DocumentsSection";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ const Page = async ({
         <HeroSection />
         <div id="library" className="wrapper container scroll-mt-20">
           <DocumentsSection query={query} />
+          <FAQSection />
         </div>
       </main>
       <Footer />
